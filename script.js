@@ -137,7 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         formato: esPrimerBloque ? datosGenerales.formato : "",
                         temporada: temporada,
                         directores: directores,
-                        guionistas: guionistas
+                        guionistas: guionistas,
+                        nro_episodio: i + 1
                     };
                     
                     datosAEnviar.push(objetoEpisodio);
