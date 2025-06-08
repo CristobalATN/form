@@ -120,10 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
             let esPrimerBloque = true;
             
             bloques.forEach((bloque, index) => {
-                const cantidad = parseInt(bloque.querySelector(`#cantidad-${index + 1}`).value);
-                const temporada = bloque.querySelector(`#temporada-${index + 1}`).value;
-                const directores = bloque.querySelector(`#directores-${index + 1}`).value;
-                const guionistas = bloque.querySelector(`#guionistas-${index + 1}`).value;
+                const bloqueId = bloque.id.split('-')[1]; // Ej: 'bloque-3' → '3'
+                const cantidad = parseInt(document.getElementById(`cantidad-${bloqueId}`).value);
+                const temporada = document.getElementById(`temporada-${bloqueId}`).value;
+                const directores = document.getElementById(`directores-${bloqueId}`).value;
+                const guionistas = document.getElementById(`guionistas-${bloqueId}`).value;
+
                 
                 // Crear un objeto para cada episodio en el bloque
                 for (let i = 0; i < cantidad; i++) {
